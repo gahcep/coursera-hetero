@@ -14,6 +14,7 @@ Folder contains solutions for all Machine Problems given in the course.
 - MP4: Tiled Matrix-Matrix Multiplication
 - MP5: Image Convolution
 - MP6: List Reduction
+- MP7: List Scan
 
 ### VSPs
 
