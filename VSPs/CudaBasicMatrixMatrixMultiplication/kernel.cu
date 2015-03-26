@@ -4,7 +4,7 @@
 #include <device_launch_parameters.h>
 
 // Load data from file
-#include "DataLoader.hpp"
+#include "../DataLoader.hpp"
 
 #include <iostream>
 #include <vector>
@@ -15,8 +15,8 @@ using namespace std;
 using namespace DataLoader;
 
 /*
- * Kernel: Matrix Multiplication
- */
+* Kernel: Matrix Multiplication
+*/
 
 __global__ void KernelMultiplyMatrix(float * matrixA, float * matrixB, float * matrixRes,
 	int numMatrixARows, int numMatrixAColumns, int numMatrixBRows, int numMatrixBColumns,
@@ -120,7 +120,7 @@ int main(int argc, char** argv)
 	dim3 BlockDim(tile, tile, 1);
 
 	// Run the kernel
-	KernelMultiplyMatrix << <GridDim, BlockDim >> >(devMatrixA, devMatrixB, devMatrixRes,
+	KernelMultiplyMatrix<<<GridDim, BlockDim>>>(devMatrixA, devMatrixB, devMatrixRes,
 		numMatrixARows, numMatrixAColumns, numMatrixBRows, numMatrixBColumns, numMatrixResRows, numMatrixResColumns);
 
 	// Wait for kernel to finish

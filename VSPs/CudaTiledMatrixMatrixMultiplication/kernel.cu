@@ -4,7 +4,7 @@
 #include <device_launch_parameters.h>
 
 // Load data from file
-#include "DataLoader.hpp"
+#include "../DataLoader.hpp"
 
 #include <iostream>
 #include <vector>
@@ -150,7 +150,7 @@ int main()
 	dim3 BlockDim(TILE_WIDTH, TILE_WIDTH, 1);
 
 	// Run the kernel
-	KernelMultiplyMatrix<<< GridDim, BlockDim >>>(devMatrixA, devMatrixB, devMatrixRes,
+	KernelMultiplyMatrix<<<GridDim, BlockDim>>>(devMatrixA, devMatrixB, devMatrixRes,
 		numMatrixARows, numMatrixAColumns, numMatrixBRows, numMatrixBColumns, numMatrixResRows, numMatrixResColumns);
 
 	// Wait for kernel to finish

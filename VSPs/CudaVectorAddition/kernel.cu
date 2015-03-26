@@ -4,7 +4,7 @@
 #include "device_launch_parameters.h"
 
 // Load data from file
-#include "DataLoader.hpp"
+#include "../DataLoader.hpp"
 
 #include <iostream>
 #include <vector>
@@ -15,8 +15,8 @@ using namespace std;
 using namespace DataLoader;
 
 /*
- * Kernel: Vector Addition
- */
+* Kernel: Vector Addition
+*/
 
 __global__ void KernelAddVec(float * vecA, float * vecB, float * vecRes, size_t length) {
 	// Get index
@@ -28,7 +28,7 @@ __global__ void KernelAddVec(float * vecA, float * vecB, float * vecRes, size_t 
 	}
 }
 
-int main(int argc, char** argv) 
+int main(int argc, char** argv)
 {
 	// Host arrays
 	float * hostVecA;
@@ -87,7 +87,7 @@ int main(int argc, char** argv)
 	dim3 BlockDim(256, 1, 1);
 
 	// Run the kernel
-	KernelAddVec<<< GridDim, BlockDim >>>(devVecA, devVecB, devVecRes, VECTOR_LENGTH);
+	KernelAddVec<<<GridDim, BlockDim>>>(devVecA, devVecB, devVecRes, VECTOR_LENGTH);
 
 	// Wait for kernel to finish
 	cudaDeviceSynchronize();

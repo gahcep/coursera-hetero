@@ -13,15 +13,15 @@ int main()
 		return 1;
 
 	/*
-		CUDA 3.0
-		totalGlobalMem = 2GB
-		sharedMemPerBlock = 49152 bytes
-		regsPerBlock = 65536
-		warpSize = 32
-		maxThreadsPerBlock = 1024	
-		maxThreadsDim = {1024, 1024, 64}
-		maxGridSize	= {2147483647, 65535, 65535}
-		totalConstMem = 65536
+	CUDA 3.0
+	totalGlobalMem = 2GB
+	sharedMemPerBlock = 49152 bytes
+	regsPerBlock = 65536
+	warpSize = 32
+	maxThreadsPerBlock = 1024
+	maxThreadsDim = {1024, 1024, 64}
+	maxGridSize	= {2147483647, 65535, 65535}
+	totalConstMem = 65536
 	*/
 
 	cudaDeviceProp props;
